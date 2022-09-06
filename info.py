@@ -26,8 +26,8 @@ ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('-1001732958199', '0').split()]
 auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('1852868839', '').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
-auth_channel = environ.get('AUTH_CHANNEL')
-auth_grp = environ.get('AUTH_GROUP')
+auth_channel = environ.get('-1001677597971')
+auth_grp = environ.get('-1001677597971')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 
@@ -43,12 +43,12 @@ P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "False")))
 IMDB = is_enabled((environ.get('IMDB', "True")))
 SINGLE_BUTTON = is_enabled((environ.get('SINGLE_BUTTON', "False")))
 CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION")
-BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", CUSTOM_FILE_CAPTION)
+BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION")
 IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", "<b>Query: {query}</b> \n‌‌‌‌IMDb Data:\n\n🏷 Title: <a href={url}>{title}</a>\n🎭 Genres: {genres}\n📆 Year: <a href={url}/releaseinfo>{year}</a>\n🌟 Rating: <a href={url}/ratings>{rating}</a> / 10")
 LONG_IMDB_DESCRIPTION = is_enabled(environ.get("LONG_IMDB_DESCRIPTION", "False"))
 SPELL_CHECK_REPLY = is_enabled(environ.get("SPELL_CHECK_REPLY", "True"))
 MAX_LIST_ELM = environ.get("MAX_LIST_ELM")
-INDEX_REQ_CHANNEL = int(environ.get('-1001771182947', LOG_CHANNEL))
+INDEX_REQ_CHANNEL = int(environ.get('-1001771182947'))
 FILE_STORE_CHANNEL = [int(ch) for ch in (environ.get('FILE_STORE_CHANNEL', '')).split()]
 MELCOW_NEW_USERS = is_enabled((environ.get('MELCOW_NEW_USERS', "True")))
 PROTECT_CONTENT = is_enabled((environ.get('PROTECT_CONTENT', "False")))
